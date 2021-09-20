@@ -367,17 +367,17 @@ DropzoneAreaBase.defaultProps = {
         },
         autoHideDuration: 6000,
     },
-    getFileLimitExceedMessage: (filesLimit) => (`Maximum allowed number of files exceeded. Only ${filesLimit} allowed`),
-    getFileAddedMessage: (fileName) => (`File ${fileName} successfully added.`),
+    getFileLimitExceedMessage: (filesLimit) => (`Nombre maximum autorisé de fichiers dépassé. Seulement ${filesLimit} autorisé.`),
+    getFileAddedMessage: (fileName) => (`Fichier ${fileName} ajouté avec succès.`),
     getPreviewIcon: defaultGetPreviewIcon,
-    getFileRemovedMessage: (fileName) => (`File ${fileName} removed.`),
+    getFileRemovedMessage: (fileName) => (`Fichier ${fileName} supprimé.`),
     getDropRejectMessage: (rejectedFile, acceptedFiles, maxFileSize) => {
-        let message = `File ${rejectedFile.name} was rejected. `;
+        let message = `Le fichier ${rejectedFile.name} a été rejeté. `;
         if (!acceptedFiles.includes(rejectedFile.type)) {
-            message += 'File type not supported. ';
+            message += 'Type de fichier non pris en charge. ';
         }
         if (rejectedFile.size > maxFileSize) {
-            message += 'File is too big. Size limit is ' + convertBytesToMbsOrKbs(maxFileSize) + '. ';
+            message += 'Le fichier est trop grand. La taille limite est ' + convertBytesToMbsOrKbs(maxFileSize) + '. ';
         }
         return message;
     },

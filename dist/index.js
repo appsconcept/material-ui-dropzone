@@ -18,7 +18,7 @@ var PropTypes = _interopDefault(require('prop-types'));
 var React = require('react');
 var Snackbar = _interopDefault(require('@mui/material/Snackbar'));
 var Typography = _interopDefault(require('@mui/material/Typography'));
-var Button = _interopDefault(require('@material-ui/core/Button'));
+var Button = _interopDefault(require('@mui/material/Button'));
 var styles$3 = require('@mui/styles');
 var AttachFileIcon = _interopDefault(require('@mui/icons-material/AttachFile'));
 var CloudUploadIcon = _interopDefault(require('@mui/icons-material/CloudUpload'));
@@ -35,7 +35,6 @@ var CloseIcon = _interopDefault(require('@mui/icons-material/Close'));
 var ErrorIcon = _interopDefault(require('@mui/icons-material/Error'));
 var InfoIcon = _interopDefault(require('@mui/icons-material/Info'));
 var WarningIcon = _interopDefault(require('@mui/icons-material/Warning'));
-var Button$1 = _interopDefault(require('@mui/material/Button'));
 var Dialog = _interopDefault(require('@mui/material/Dialog'));
 var DialogActions = _interopDefault(require('@mui/material/DialogActions'));
 var DialogContent = _interopDefault(require('@mui/material/DialogContent'));
@@ -716,24 +715,24 @@ DropzoneAreaBase.defaultProps = {
     autoHideDuration: 6000
   },
   getFileLimitExceedMessage: function getFileLimitExceedMessage(filesLimit) {
-    return "Maximum allowed number of files exceeded. Only ".concat(filesLimit, " allowed");
+    return "Nombre maximum autoris\xE9 de fichiers d\xE9pass\xE9. Seulement ".concat(filesLimit, " autoris\xE9.");
   },
   getFileAddedMessage: function getFileAddedMessage(fileName) {
-    return "File ".concat(fileName, " successfully added.");
+    return "Fichier ".concat(fileName, " ajout\xE9 avec succ\xE8s.");
   },
   getPreviewIcon: defaultGetPreviewIcon,
   getFileRemovedMessage: function getFileRemovedMessage(fileName) {
-    return "File ".concat(fileName, " removed.");
+    return "Fichier ".concat(fileName, " supprim\xE9.");
   },
   getDropRejectMessage: function getDropRejectMessage(rejectedFile, acceptedFiles, maxFileSize) {
-    var message = "File ".concat(rejectedFile.name, " was rejected. ");
+    var message = "Le fichier ".concat(rejectedFile.name, " a \xE9t\xE9 rejet\xE9. ");
 
     if (!acceptedFiles.includes(rejectedFile.type)) {
-      message += 'File type not supported. ';
+      message += 'Type de fichier non pris en charge. ';
     }
 
     if (rejectedFile.size > maxFileSize) {
-      message += 'File is too big. Size limit is ' + convertBytesToMbsOrKbs(maxFileSize) + '. ';
+      message += 'Le fichier est trop grand. La taille limite est ' + convertBytesToMbsOrKbs(maxFileSize) + '. ';
     }
 
     return message;
@@ -1286,10 +1285,10 @@ var DropzoneDialogBase = /*#__PURE__*/function (_React$PureComponent) {
         maxWidth: maxWidth,
         onClose: onClose,
         open: open
-      }), /*#__PURE__*/React.createElement(DialogTitle, null, dialogTitle), /*#__PURE__*/React.createElement(DialogContent, null, /*#__PURE__*/React.createElement(DropzoneAreaBase$1, dropzoneAreaProps)), /*#__PURE__*/React.createElement(DialogActions, null, /*#__PURE__*/React.createElement(Button$1, {
+      }), /*#__PURE__*/React.createElement(DialogTitle, null, dialogTitle), /*#__PURE__*/React.createElement(DialogContent, null, /*#__PURE__*/React.createElement(DropzoneAreaBase$1, dropzoneAreaProps)), /*#__PURE__*/React.createElement(DialogActions, null, /*#__PURE__*/React.createElement(Button, {
         color: "primary",
         onClick: onClose
-      }, cancelButtonText), /*#__PURE__*/React.createElement(Button$1, {
+      }, cancelButtonText), /*#__PURE__*/React.createElement(Button, {
         color: "primary",
         disabled: submitDisabled,
         onClick: onSave

@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import { createElement, Fragment, isValidElement, PureComponent } from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import Typography from '@mui/material/Typography';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { withStyles } from '@mui/styles';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -29,7 +29,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import ErrorIcon from '@mui/icons-material/Error';
 import InfoIcon from '@mui/icons-material/Info';
 import WarningIcon from '@mui/icons-material/Warning';
-import Button$1 from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -710,24 +709,24 @@ DropzoneAreaBase.defaultProps = {
     autoHideDuration: 6000
   },
   getFileLimitExceedMessage: function getFileLimitExceedMessage(filesLimit) {
-    return "Maximum allowed number of files exceeded. Only ".concat(filesLimit, " allowed");
+    return "Nombre maximum autoris\xE9 de fichiers d\xE9pass\xE9. Seulement ".concat(filesLimit, " autoris\xE9.");
   },
   getFileAddedMessage: function getFileAddedMessage(fileName) {
-    return "File ".concat(fileName, " successfully added.");
+    return "Fichier ".concat(fileName, " ajout\xE9 avec succ\xE8s.");
   },
   getPreviewIcon: defaultGetPreviewIcon,
   getFileRemovedMessage: function getFileRemovedMessage(fileName) {
-    return "File ".concat(fileName, " removed.");
+    return "Fichier ".concat(fileName, " supprim\xE9.");
   },
   getDropRejectMessage: function getDropRejectMessage(rejectedFile, acceptedFiles, maxFileSize) {
-    var message = "File ".concat(rejectedFile.name, " was rejected. ");
+    var message = "Le fichier ".concat(rejectedFile.name, " a \xE9t\xE9 rejet\xE9. ");
 
     if (!acceptedFiles.includes(rejectedFile.type)) {
-      message += 'File type not supported. ';
+      message += 'Type de fichier non pris en charge. ';
     }
 
     if (rejectedFile.size > maxFileSize) {
-      message += 'File is too big. Size limit is ' + convertBytesToMbsOrKbs(maxFileSize) + '. ';
+      message += 'Le fichier est trop grand. La taille limite est ' + convertBytesToMbsOrKbs(maxFileSize) + '. ';
     }
 
     return message;
@@ -1280,10 +1279,10 @@ var DropzoneDialogBase = /*#__PURE__*/function (_React$PureComponent) {
         maxWidth: maxWidth,
         onClose: onClose,
         open: open
-      }), /*#__PURE__*/createElement(DialogTitle, null, dialogTitle), /*#__PURE__*/createElement(DialogContent, null, /*#__PURE__*/createElement(DropzoneAreaBase$1, dropzoneAreaProps)), /*#__PURE__*/createElement(DialogActions, null, /*#__PURE__*/createElement(Button$1, {
+      }), /*#__PURE__*/createElement(DialogTitle, null, dialogTitle), /*#__PURE__*/createElement(DialogContent, null, /*#__PURE__*/createElement(DropzoneAreaBase$1, dropzoneAreaProps)), /*#__PURE__*/createElement(DialogActions, null, /*#__PURE__*/createElement(Button, {
         color: "primary",
         onClick: onClose
-      }, cancelButtonText), /*#__PURE__*/createElement(Button$1, {
+      }, cancelButtonText), /*#__PURE__*/createElement(Button, {
         color: "primary",
         disabled: submitDisabled,
         onClick: onSave

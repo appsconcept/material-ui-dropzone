@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import {withStyles} from '@mui/styles';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import MuiAlert from '@mui/material/Alert';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
@@ -11,7 +12,13 @@ import {Fragment} from 'react';
 import Dropzone from 'react-dropzone';
 import {convertBytesToMbsOrKbs, isImage, readFile} from '../helpers';
 import PreviewList from './PreviewList';
-import SnackbarContentWrapper from './SnackbarContentWrapper';
+
+const Alert = React.forwardRef(function Alert(
+    props,
+    ref,
+) {
+    return <MuiAlert elevation={6} ref={ref} variant="standard" {...props} />;
+});
 
 const styles = ({palette, shape, spacing}) => ({
     '@keyframes progress': {
@@ -330,11 +337,7 @@ class DropzoneAreaBase extends React.PureComponent {
                         open={openSnackBar}
                         onClose={this.handleCloseSnackbar}
                     >
-                        <SnackbarContentWrapper
-                            onClose={this.handleCloseSnackbar}
-                            variant={snackbarVariant}
-                            message={snackbarMessage}
-                        />
+                        <Alert severity={snackbarVariant} onClose={this.handleCloseSnackbar}>{snackbarMessage}</Alert>
                     </Snackbar>
                 }
             </Fragment>
